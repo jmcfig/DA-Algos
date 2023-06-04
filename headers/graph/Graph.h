@@ -8,8 +8,8 @@
 #include <algorithm>
 #include <cmath>
 #include <stack>
+#include <float.h>
 #include "MutablePriorityQueue.h"
-
 #include "VertexEdge.h"
 
 class Graph {
@@ -119,13 +119,14 @@ public:
     std::vector<Edge*> prim();
     void dfs(Vertex *v,std::vector<Edge *> mst,  std::vector<Vertex*> &path);
 
+    void nnRec(Vertex *&start, Vertex *&curr, std::vector<Vertex *> &path, double &distance);
+
+    double tspNearestNeighbor(std::vector<Vertex*> &path);
 
 
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
 
-    double ** distMatrix = nullptr;   // dist matrix for Floyd-Warshall
-    int **pathMatrix = nullptr;   // path matrix for Floyd-Warshall
 
 
 
@@ -148,7 +149,5 @@ protected:
 
 };
 
-void deleteMatrix(int **m, int n);
-void deleteMatrix(double **m, int n);
 
 #endif

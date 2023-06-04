@@ -72,42 +72,10 @@ public:
     void mediumGraphsMenu();
 
 
-    /**
-    @brief Runs problem 1 based on the loaded graph.
-    The runProblem1() function first checks if a graph is loaded by calling the checkLoaded() function. If no graph is loaded, it redirects the user to the load graph menu.
-    If a graph is loaded, it checks if the filename of the loaded graph contains the substring "toy_graphs" by using the find() function. If the substring is not found, it displays a warning message indicating that the graph may be too big for a brute force algorithm and asks the user if they still want to proceed. If the user chooses not to proceed, it redirects them to the start menu.
-    If the user chooses to proceed or if the loaded graph is a toy graph, it measures the time taken to solve the TSP problem using a backtracking algorithm by capturing the clock value before and after the algorithm execution. It also stores the path of the TSP solution in a vector called tsp_path and the cost of the TSP solution in the variable cost.
-    Finally, it calls the printPath() function to display the cost and the path of the TSP solution. It then redirects the user to the start menu.
-    @note This function assumes that the graph and readCSV objects are member variables of the Menus class.
-    @note The time complexity of the TSP problem solved by the backtracking algorithm in this function is exponential, O(2^n * n^2), where n is the number of vertices in the graph.
-    @return void
-    */
-    void runProblem1();
+
+    void runProblem(int problem_number);
 
 
-    /**
-    @brief Runs Problem 2.
-    The runProblem2() function executes Problem 2. It first checks if a graph is loaded by calling the checkLoaded() function.
-    After that, it measures the time taken to execute the tspApprox() function, which approximates the Traveling Salesman Problem (TSP) solution for the loaded graph. The resulting TSP path and its cost are stored in the tsp_path vector and cost variable, respectively.
-    The time taken to execute the tspApprox() function is measured using the clock() function. The difference between the end and begin clock ticks represents the execution time.
-    Finally, it calls the printPath() function to display the TSP path and cost, and then returns to the start menu by calling the startMenu() function.
-    @note This function assumes that the graph object is a member variable of the Menus class.
-    @note The time complexity of this function depends on the complexity of the tspApprox() function and the size of the loaded graph.
-    @return void
-    */
-    void runProblem2();
-
-
-    /**
-    @brief Runs Problem 3.
-    The runProblem3() function executes Problem 3. It first checks if a graph is loaded by calling the checkLoaded() function.
-    As of now, Problem 3 is not implemented, and the function displays a message stating that it is not implemented yet.
-    Finally, it returns to the start menu by calling the startMenu() function.
-    @note This function assumes that the graph object is a member variable of the Menus class.
-    @note The time complexity of this function is negligible since it only displays a message and returns to the start menu.
-    @return void
-    */
-    void runProblem3();
 
 
     /**
@@ -133,7 +101,7 @@ public:
     */
     void checkLoaded();
 
-
+    void checkPlausible();
 
 private:
     Graph graph;

@@ -22,13 +22,9 @@ void Menus::startMenu() {
 
     switch(option){
         case 1:
-            runProblem1();
-            break;
         case 2:
-            runProblem2();
-            break;
         case 3:
-            runProblem3();
+            runProblem(option);
             break;
         case 4:
             graphMenu();
@@ -224,7 +220,6 @@ void Menus::realWorldGraphsMenu() {
 }
 
 
-
 void Menus::checkLoaded() {
     if(graph.getNumVertex() == 0) {
         cout << "No graph loaded, redirecting you to load graph menu." << endl;
@@ -236,59 +231,47 @@ void Menus::checkLoaded() {
     cout << endl;
 }
 
-
-void Menus::runProblem1() {
-
-    checkLoaded();
+void Menus::checkPlausible(){
     if(readCSV.getFilename().find("toy_graphs") == std::string::npos){
         cout << "This graph is too big for such a brute force algorithm, " << endl <<
-                "and you should NOT run it as it is." << endl <<
-                "It's advised, instead, to go for a toy graph." << endl <<
-                "Would you like to do it anyways?(y/n)"<< endl;
+             "and you should NOT run it as it is." << endl <<
+             "It's advised, instead, to go for a toy graph." << endl <<
+             "Would you like to do it anyways?(y/n)"<< endl;
         char option;
         cin >> option;
         if(toupper(option) == 'N') {
             startMenu();
         }
     }
-    clock_t begin = clock();
+}
+
+void Menus::runProblem(int problemNumber){
+    checkLoaded();
+
+    if(problemNumber == 1)
+        checkPlausible();
+
+
     std::vector<Vertex *> tsp_path;
-    double cost = graph.tspBT(tsp_path);
+    double cost;
+    clock_t begin = clock();
+
+    switch(problemNumber){
+        case 1: cost = graph.tspBT(tsp_path); break;
+        case 2: cost = graph.tspApprox(tsp_path); break;
+        case 3: cost = graph.tspNearestNeighbor(tsp_path); break;
+    }
+
     clock_t end = clock();
+
     printPath(cost, tsp_path, end-begin);
-
-
-
     startMenu();
 }
 
-void Menus::runProblem2() {
-
-    checkLoaded();
-
-    clock_t begin = clock();
-    std::vector<Vertex *> tsp_path;
-    double cost = graph.tspApprox(tsp_path);
-    clock_t end = clock();
-    printPath(cost, tsp_path,end-begin);
-    startMenu();
-
-    startMenu();
-
-}
-
-void Menus::runProblem3() {
-
-    checkLoaded();
-
-    cout << "Not implemented yet." << endl;
-
-    startMenu();
-
-}
 
 void Menus::printPath(double cost, std::vector<Vertex *> path, double time){
-    cout << "The minimum cost is: " << cost << endl;
+    path.push_back(path[0]);
+    cout << "The minimum distance is: " << cost << " meters." << endl;
     std::cout << "The path for that value is: ";
     for (int i = 0; i < path.size(); i++) {
         cout << path[i]->getId();

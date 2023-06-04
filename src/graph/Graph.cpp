@@ -149,9 +149,6 @@ std::vector<Edge*> Graph::prim(){
     std::vector<Edge*> mst;
     std::priority_queue<Edge*, std::vector<Edge*>, Edge::EdgeCompare> pq;
 
-    for(Vertex* v : vertexSet){
-        v->setInMst(false);
-    }
 
     Vertex* start = vertexSet[0];
     for(Edge* e : start->getAdj()){
@@ -180,6 +177,11 @@ std::vector<Edge*> Graph::prim(){
 
 
 double Graph::tspApprox(std::vector<Vertex*> &path){
+
+    for(Vertex* v : vertexSet){
+        v->setVisited(false);
+        v->setInMst(false);
+    }
 
     std::vector<Edge*> mst = prim();
     dfs(vertexSet[0],mst,path);
@@ -236,16 +238,56 @@ double Graph::haversine(Vertex *v1, Vertex *v2) {
     return 6371.0 * c;
 }
 
+double Graph::tspNearestNeighbor(std::vector<Vertex *> &path) {
+
+    for(Vertex* v : vertexSet)
+        v->setVisited(false);
+
+    Vertex* start = vertexSet[0];
+    Vertex* curr = vertexSet[0];
+    double distance = 0.0;
+
+    nnRec(start,curr,path,distance);
+
+    if(path.back()->hasEdgeTo(path[0]->getId()))
+        distance += path.back()->getEdgeTo(path[0])->getWeight();
+    else
+        distance += haversine(path.back(),path[0]);
+
+    return distance;
+}
 
 
+void Graph::nnRec(Vertex* &start, Vertex* &curr, std::vector<Vertex*>& path, double &distance){
+    int visitedVertices = 0;
+    for(Vertex *v: vertexSet)
+        if(v->isVisited()) visitedVertices++;
 
+    if(visitedVertices >= vertexSet.size())
+        distance += haversine(curr, start);
 
+    curr->setVisited(true);
+    path.push_back(curr);
 
+    Edge *minEdge = nullptr;
+    double minWeight = std::numeric_limits<double>::max();
+    for(auto e: curr->getAdj()){
+        if(!e->getDest()->isVisited() && e->getWeight() < minWeight){
+            minEdge = e;
+            minWeight = e->getWeight();
+        }
+    }
+
+    if(minEdge){
+        distance += minWeight;
+        curr = minEdge->getDest();
+        nnRec(start, curr, path, distance);
+    }
+}
 
 
 Graph::~Graph() {
-    deleteMatrix(distMatrix, vertexSet.size());
-    deleteMatrix(pathMatrix, vertexSet.size());
+
 }
 
 
