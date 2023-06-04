@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['label_0',['label',['../class_vertex.html#a92b4c1ace28912f1b9ebb77f1033364e',1,'Vertex']]],
+  ['latitude_1',['latitude',['../class_vertex.html#af733d6c48db17a4409b9f74b22b72c81',1,'Vertex']]],
+  ['longitude_2',['longitude',['../class_vertex.html#af14d5e6b9b67ec08a51ef90e80fc62e7',1,'Vertex']]]
+];

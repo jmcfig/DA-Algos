@@ -1,5 +1,5 @@
 
-#include "../../headers/graph/Graph.h"
+#include "../../headers/Graph.h"
 
 int Graph::getNumVertex() const {
     return vertexSet.size();

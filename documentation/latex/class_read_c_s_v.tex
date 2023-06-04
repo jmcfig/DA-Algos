@@ -1,0 +1,131 @@
+\hypertarget{class_read_c_s_v}{}\doxysection{Read\+CSV Class Reference}
+\label{class_read_c_s_v}\index{ReadCSV@{ReadCSV}}
+
+
+{\ttfamily \#include $<$Read\+CSV.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_read_c_s_v_a479310353f7e9a01a928862663cf0384}{Read\+CSV}} ()
+\item 
+void \mbox{\hyperlink{class_read_c_s_v_ac2828445d470e8406710cfa00f8531e7}{set\+Filename}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the filename for reading the CSV data. The \mbox{\hyperlink{class_read_c_s_v_ac2828445d470e8406710cfa00f8531e7}{set\+Filename()}} function sets the filename to be used for reading the CSV data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_c_s_v_a6c3c1a5c1db854208452c89e84cf551d}{set\+File}} (string filename)
+\item 
+const string \& \mbox{\hyperlink{class_read_c_s_v_a85350daf72e74e59cfeb5c62c6195f4b}{get\+Filename}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the filename associated with the \mbox{\hyperlink{class_read_c_s_v}{Read\+CSV}} object. The \mbox{\hyperlink{class_read_c_s_v_a85350daf72e74e59cfeb5c62c6195f4b}{get\+Filename()}} function returns the filename associated with the \mbox{\hyperlink{class_read_c_s_v}{Read\+CSV}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph}{Graph}} \mbox{\hyperlink{class_read_c_s_v_a75fc2a2309919161ecea493a9cff3dbe}{read\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Reads and constructs a graph from the specified CSV file(s). The \mbox{\hyperlink{class_read_c_s_v_a75fc2a2309919161ecea493a9cff3dbe}{read\+Graph()}} function reads and constructs a graph based on the specified CSV file(s). If the filename contains \char`\"{}.\+csv\char`\"{}, it assumes a single file format and calls the \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph()}} function. Otherwise, it assumes a two-\/file format and calls the \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph()}} function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph}{Graph}} \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a graph from a single CSV file. The \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph()}} function constructs a graph by reading data from a single CSV file. The CSV file should contain lines representing edges between vertices, with each line containing the source vertex ID, destination vertex ID, and distance. If the CSV file includes additional columns, it considers them as labels for the vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph}{Graph}} \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a graph from two separate CSV files. The \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph()}} function constructs a graph by reading data from two separate CSV files\+: nodes.\+csv and edges.\+csv. The nodes.\+csv file should contain lines representing vertices, with each line containing the vertex ID, longitude, and latitude. The edges.\+csv file should contain lines representing edges between vertices, with each line containing the source vertex ID, destination vertex ID, and distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_read_c_s_v_a479310353f7e9a01a928862663cf0384}\label{class_read_c_s_v_a479310353f7e9a01a928862663cf0384}} 
+\index{ReadCSV@{ReadCSV}!ReadCSV@{ReadCSV}}
+\index{ReadCSV@{ReadCSV}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{ReadCSV()}{ReadCSV()}}
+{\footnotesize\ttfamily Read\+CSV\+::\+Read\+CSV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_read_c_s_v_a85350daf72e74e59cfeb5c62c6195f4b}\label{class_read_c_s_v_a85350daf72e74e59cfeb5c62c6195f4b}} 
+\index{ReadCSV@{ReadCSV}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily const string \& Read\+CSV\+::get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the filename associated with the \mbox{\hyperlink{class_read_c_s_v}{Read\+CSV}} object. The \mbox{\hyperlink{class_read_c_s_v_a85350daf72e74e59cfeb5c62c6195f4b}{get\+Filename()}} function returns the filename associated with the \mbox{\hyperlink{class_read_c_s_v}{Read\+CSV}} object. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(1). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The filename associated with the \mbox{\hyperlink{class_read_c_s_v}{Read\+CSV}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}\label{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}} 
+\index{ReadCSV@{ReadCSV}!oneFileGraph@{oneFileGraph}}
+\index{oneFileGraph@{oneFileGraph}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{oneFileGraph()}{oneFileGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}} Read\+CSV\+::one\+File\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a graph from a single CSV file. The \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph()}} function constructs a graph by reading data from a single CSV file. The CSV file should contain lines representing edges between vertices, with each line containing the source vertex ID, destination vertex ID, and distance. If the CSV file includes additional columns, it considers them as labels for the vertices. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function depends on the size of the CSV file and the number of vertices and edges in the graph. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The constructed graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_read_c_s_v_a75fc2a2309919161ecea493a9cff3dbe}\label{class_read_c_s_v_a75fc2a2309919161ecea493a9cff3dbe}} 
+\index{ReadCSV@{ReadCSV}!readGraph@{readGraph}}
+\index{readGraph@{readGraph}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{readGraph()}{readGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}} Read\+CSV\+::read\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads and constructs a graph from the specified CSV file(s). The \mbox{\hyperlink{class_read_c_s_v_a75fc2a2309919161ecea493a9cff3dbe}{read\+Graph()}} function reads and constructs a graph based on the specified CSV file(s). If the filename contains \char`\"{}.\+csv\char`\"{}, it assumes a single file format and calls the \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph()}} function. Otherwise, it assumes a two-\/file format and calls the \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph()}} function. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function depends on the specific implementation of \mbox{\hyperlink{class_read_c_s_v_a16edaf10aada4a2bc029c72d8b7db3c5}{one\+File\+Graph()}} and \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph()}} functions. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The constructed graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_read_c_s_v_a6c3c1a5c1db854208452c89e84cf551d}\label{class_read_c_s_v_a6c3c1a5c1db854208452c89e84cf551d}} 
+\index{ReadCSV@{ReadCSV}!setFile@{setFile}}
+\index{setFile@{setFile}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{setFile()}{setFile()}}
+{\footnotesize\ttfamily void Read\+CSV\+::set\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_read_c_s_v_ac2828445d470e8406710cfa00f8531e7}\label{class_read_c_s_v_ac2828445d470e8406710cfa00f8531e7}} 
+\index{ReadCSV@{ReadCSV}!setFilename@{setFilename}}
+\index{setFilename@{setFilename}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{setFilename()}{setFilename()}}
+{\footnotesize\ttfamily void Read\+CSV\+::set\+Filename (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Sets the filename for reading the CSV data. The \mbox{\hyperlink{class_read_c_s_v_ac2828445d470e8406710cfa00f8531e7}{set\+Filename()}} function sets the filename to be used for reading the CSV data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The time complexity of this function is constant, or O(1). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}\label{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}} 
+\index{ReadCSV@{ReadCSV}!twoFilesGraph@{twoFilesGraph}}
+\index{twoFilesGraph@{twoFilesGraph}!ReadCSV@{ReadCSV}}
+\doxysubsubsection{\texorpdfstring{twoFilesGraph()}{twoFilesGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}} Read\+CSV\+::two\+Files\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a graph from two separate CSV files. The \mbox{\hyperlink{class_read_c_s_v_ac893ef9b4773a13a5027c07c04162248}{two\+Files\+Graph()}} function constructs a graph by reading data from two separate CSV files\+: nodes.\+csv and edges.\+csv. The nodes.\+csv file should contain lines representing vertices, with each line containing the vertex ID, longitude, and latitude. The edges.\+csv file should contain lines representing edges between vertices, with each line containing the source vertex ID, destination vertex ID, and distance. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function depends on the size of the CSV files and the number of vertices and edges in the graph. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The constructed graph. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{_read_c_s_v_8h}{Read\+CSV.\+h}}\end{DoxyCompactItemize}

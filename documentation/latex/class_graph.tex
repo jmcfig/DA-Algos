@@ -1,0 +1,390 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph}} ()
+\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_graph_a089f7fc73ea9976295d387846ad36c69}{find\+Vertex}} (const int \&id) const
+\begin{DoxyCompactList}\small\item\em Finds a vertex in the graph by its ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graph_a59a5e666d2b7dc025704d7e6bce95c01}{add\+Vertex}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Adds a vertex to the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graph_a516f4487d70f4b15e413447afa8c2310}{add\+Edge}} (const int \&sourc, const int \&dest, double w)
+\begin{DoxyCompactList}\small\item\em Adds an edge to the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graph_a5d6b6b10ebe49cc0191ab45151cd49e7}{add\+Bidirectional\+Edge}} (const int \&sourc, const int \&dest, double w)
+\begin{DoxyCompactList}\small\item\em Adds a bidirectional edge between two vertices in the graph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_graph_abb5e0517e2979c54eebdafc2a9875e8f}{get\+Num\+Vertex}} () const
+\begin{DoxyCompactList}\small\item\em Give the number of vertices in the graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \mbox{\hyperlink{class_graph_a619ac583094079134074658e29463c0e}{get\+Vertex\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Give a vector containing all the vertices in the graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_aa1e348703ca30391daab44f6241fdd85}{tsp\+BT}} (std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Call the tsp\+BTRec function to find the shortest path in a graph using the Backtracking approach for the Traveling Salesman Problem (TSP). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_aa95ee6b6dde3ad4eb09cb92c7eab8764}{tsp\+BTRec}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$cur\+Vertex, unsigned int cur\+Index, double cur\+Dist, std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&cur\+Path, double \&min\+Dist, std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Finds the shortest path in a graph using the Backtracking approach for the Traveling Salesman Problem (TSP). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_af6ef066468dbdd5c28ea2720df422563}{haversine}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v1, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v2)
+\begin{DoxyCompactList}\small\item\em Calculates the Haversine distance between two vertices representing geographic coordinates. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_ae7e7b5a9396b6d6ef246fc946d9b90ce}{tsp\+Approx}} (std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Finds an approximate solution for the Traveling Salesman Problem (TSP) using a greedy algorithm. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $\ast$ $>$ \mbox{\hyperlink{class_graph_ade5abbd54af96978ea2d1a7c7c9246bf}{prim}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the MST of the graph using Prim\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_abd1aa08e70d5b0f7e5bd9788a4e94bfc}{dfs}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v, std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $\ast$ $>$ mst, std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Performs a depth-\/first search (DFS) traversal on the minimum spanning tree (MST) of the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_aa5a35365391d463641db50b1df6b3f53}{nn\+Rec}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$\&start, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$\&curr, std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path, double \&distance)
+\begin{DoxyCompactList}\small\item\em Applies the Nearest Neighbor (NN) algorithm recursively to find a heuristic solution for the Traveling Salesman Problem (TSP). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a3640026af5e18a5757044ec84b6c42a7}{tsp\+Nearest\+Neighbor}} (std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Use the nn\+Rec function to find a heuristic solution for the Traveling Salesman Problem (TSP). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_graph_a7dfcef08a9286cf144902cd7e56940ee}{find\+Vertex\+Idx}} (const int \&id) const
+\begin{DoxyCompactList}\small\item\em Finds the index of a vertex in the vertex\+Set vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \mbox{\hyperlink{class_graph_aa9b0a6d8ad43c5eabaca5a7140bcc8b6}{vertex\+Set}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_a902c5b3eacb66d60752525ab23297a95}\label{class_graph_a902c5b3eacb66d60752525ab23297a95}} 
+\index{Graph@{Graph}!````~Graph@{$\sim$Graph}}
+\index{````~Graph@{$\sim$Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{$\sim$Graph()}{~Graph()}}
+{\footnotesize\ttfamily Graph\+::$\sim$\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a5d6b6b10ebe49cc0191ab45151cd49e7}\label{class_graph_a5d6b6b10ebe49cc0191ab45151cd49e7}} 
+\index{Graph@{Graph}!addBidirectionalEdge@{addBidirectionalEdge}}
+\index{addBidirectionalEdge@{addBidirectionalEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addBidirectionalEdge()}{addBidirectionalEdge()}}
+{\footnotesize\ttfamily bool Graph\+::add\+Bidirectional\+Edge (\begin{DoxyParamCaption}\item[{const int \&}]{sourc,  }\item[{const int \&}]{dest,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds a bidirectional edge between two vertices in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The ID of the source vertex. \\
+\hline
+{\em dest} & The ID of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(\+V) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the bidirectional edge was added successfully, false if either source or destination vertex is not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a516f4487d70f4b15e413447afa8c2310}\label{class_graph_a516f4487d70f4b15e413447afa8c2310}} 
+\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily bool Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{const int \&}]{sourc,  }\item[{const int \&}]{dest,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds an edge to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The ID of the source vertex. \\
+\hline
+{\em dest} & The ID of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(\+V) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the edge was added successfully, false if either the source or destination vertex does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a59a5e666d2b7dc025704d7e6bce95c01}\label{class_graph_a59a5e666d2b7dc025704d7e6bce95c01}} 
+\index{Graph@{Graph}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily bool Graph\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+Adds a vertex to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the vertex to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vertex was added successfully, false if a vertex with the same ID already exists. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(\+V) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_abd1aa08e70d5b0f7e5bd9788a4e94bfc}\label{class_graph_abd1aa08e70d5b0f7e5bd9788a4e94bfc}} 
+\index{Graph@{Graph}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}}
+{\footnotesize\ttfamily void Graph\+::dfs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $\ast$ $>$}]{mst,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Performs a depth-\/first search (DFS) traversal on the minimum spanning tree (MST) of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Pointer to the current vertex being visited. \\
+\hline
+{\em mst} & Vector containing the edges of the MST. \\
+\hline
+{\em path} & Reference to the vector representing the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(E+V). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a089f7fc73ea9976295d387846ad36c69}\label{class_graph_a089f7fc73ea9976295d387846ad36c69}} 
+\index{Graph@{Graph}!findVertex@{findVertex}}
+\index{findVertex@{findVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{findVertex()}{findVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ Graph\+::find\+Vertex (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Finds a vertex in the graph by its ID. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(\+V) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the vertex to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the vertex with the specified ID, or nullptr if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a7dfcef08a9286cf144902cd7e56940ee}\label{class_graph_a7dfcef08a9286cf144902cd7e56940ee}} 
+\index{Graph@{Graph}!findVertexIdx@{findVertexIdx}}
+\index{findVertexIdx@{findVertexIdx}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{findVertexIdx()}{findVertexIdx()}}
+{\footnotesize\ttfamily int Graph\+::find\+Vertex\+Idx (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Finds the index of a vertex in the vertex\+Set vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the vertex to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the vertex in the vertex\+Set vector, or -\/1 if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_abb5e0517e2979c54eebdafc2a9875e8f}\label{class_graph_abb5e0517e2979c54eebdafc2a9875e8f}} 
+\index{Graph@{Graph}!getNumVertex@{getNumVertex}}
+\index{getNumVertex@{getNumVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getNumVertex()}{getNumVertex()}}
+{\footnotesize\ttfamily int Graph\+::get\+Num\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give the number of vertices in the graph. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(1). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of vertices in the graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a619ac583094079134074658e29463c0e}\label{class_graph_a619ac583094079134074658e29463c0e}} 
+\index{Graph@{Graph}!getVertexSet@{getVertexSet}}
+\index{getVertexSet@{getVertexSet}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getVertexSet()}{getVertexSet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ Graph\+::get\+Vertex\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give a vector containing all the vertices in the graph. 
+
+\begin{DoxyNote}{Note}
+The time complexity of this function is O(1). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+A vector containing all the vertices in the graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_af6ef066468dbdd5c28ea2720df422563}\label{class_graph_af6ef066468dbdd5c28ea2720df422563}} 
+\index{Graph@{Graph}!haversine@{haversine}}
+\index{haversine@{haversine}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{haversine()}{haversine()}}
+{\footnotesize\ttfamily double Graph\+::haversine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v1,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Calculates the Haversine distance between two vertices representing geographic coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & Pointer to the first vertex. \\
+\hline
+{\em v2} & Pointer to the first vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(1). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The Haversine distance between the two vertices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_aa5a35365391d463641db50b1df6b3f53}\label{class_graph_aa5a35365391d463641db50b1df6b3f53}} 
+\index{Graph@{Graph}!nnRec@{nnRec}}
+\index{nnRec@{nnRec}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{nnRec()}{nnRec()}}
+{\footnotesize\ttfamily void Graph\+::nn\+Rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$\&}]{start,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$\&}]{curr,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path,  }\item[{double \&}]{distance }\end{DoxyParamCaption})}
+
+
+
+Applies the Nearest Neighbor (NN) algorithm recursively to find a heuristic solution for the Traveling Salesman Problem (TSP). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting vertex for the TSP tour. \\
+\hline
+{\em curr} & The current vertex being visited in the recursion. \\
+\hline
+{\em path} & A vector of vertices to store the TSP tour path. \\
+\hline
+{\em distance} & The total distance of the TSP tour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(\+V$^\wedge$2). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_ade5abbd54af96978ea2d1a7c7c9246bf}\label{class_graph_ade5abbd54af96978ea2d1a7c7c9246bf}} 
+\index{Graph@{Graph}!prim@{prim}}
+\index{prim@{prim}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{prim()}{prim()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $\ast$ $>$ Graph\+::prim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the MST of the graph using Prim\textquotesingle{}s algorithm. 
+
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(E+V log V). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+A vector containing the edges of the MST. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_ae7e7b5a9396b6d6ef246fc946d9b90ce}\label{class_graph_ae7e7b5a9396b6d6ef246fc946d9b90ce}} 
+\index{Graph@{Graph}!tspApprox@{tspApprox}}
+\index{tspApprox@{tspApprox}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspApprox()}{tspApprox()}}
+{\footnotesize\ttfamily double Graph\+::tsp\+Approx (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Finds an approximate solution for the Traveling Salesman Problem (TSP) using a greedy algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Reference to the vector representing the shortest path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(E+v log V). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The total distance of the shortest path. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_aa1e348703ca30391daab44f6241fdd85}\label{class_graph_aa1e348703ca30391daab44f6241fdd85}} 
+\index{Graph@{Graph}!tspBT@{tspBT}}
+\index{tspBT@{tspBT}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspBT()}{tspBT()}}
+{\footnotesize\ttfamily double Graph\+::tsp\+BT (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Call the tsp\+BTRec function to find the shortest path in a graph using the Backtracking approach for the Traveling Salesman Problem (TSP). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Reference to the vector representing the shortest path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total distance of the shortest path. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_aa95ee6b6dde3ad4eb09cb92c7eab8764}\label{class_graph_aa95ee6b6dde3ad4eb09cb92c7eab8764}} 
+\index{Graph@{Graph}!tspBTRec@{tspBTRec}}
+\index{tspBTRec@{tspBTRec}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspBTRec()}{tspBTRec()}}
+{\footnotesize\ttfamily void Graph\+::tsp\+BTRec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{cur\+Vertex,  }\item[{unsigned int}]{cur\+Index,  }\item[{double}]{cur\+Dist,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{cur\+Path,  }\item[{double \&}]{min\+Dist,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Finds the shortest path in a graph using the Backtracking approach for the Traveling Salesman Problem (TSP). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+Vertex} & Pointer to the current vertex being visited. \\
+\hline
+{\em cur\+Index} & The index of the current vertex in the path. \\
+\hline
+{\em cur\+Dist} & The current total distance of the path. \\
+\hline
+{\em cur\+Path} & Reference to the vector representing the current path. \\
+\hline
+{\em min\+Dist} & Reference to the minimum distance found so far. \\
+\hline
+{\em path} & Reference to the vector representing the shortest path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(V!). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a3640026af5e18a5757044ec84b6c42a7}\label{class_graph_a3640026af5e18a5757044ec84b6c42a7}} 
+\index{Graph@{Graph}!tspNearestNeighbor@{tspNearestNeighbor}}
+\index{tspNearestNeighbor@{tspNearestNeighbor}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspNearestNeighbor()}{tspNearestNeighbor()}}
+{\footnotesize\ttfamily double Graph\+::tsp\+Nearest\+Neighbor (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Use the nn\+Rec function to find a heuristic solution for the Traveling Salesman Problem (TSP). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A vector of vertices to store the TSP tour path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The complexity of this algorithm is O(\+V$^\wedge$2). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The total distance of the TSP tour. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_aa9b0a6d8ad43c5eabaca5a7140bcc8b6}\label{class_graph_aa9b0a6d8ad43c5eabaca5a7140bcc8b6}} 
+\index{Graph@{Graph}!vertexSet@{vertexSet}}
+\index{vertexSet@{vertexSet}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{vertexSet}{vertexSet}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$$>$ Graph\+::vertex\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{_graph_8h}{Graph.\+h}}\end{DoxyCompactItemize}

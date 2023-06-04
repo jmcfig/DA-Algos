@@ -1,4 +1,4 @@
-#include "../../headers/graph/VertexEdge.h"
+#include "../../headers/VertexEdge.h"
 
 /************************* Vertex  **************************/
 

@@ -6,7 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <iterator>
-#include "graph/Graph.h"
+#include "Graph.h"
 
 
 using namespace std;
